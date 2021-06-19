@@ -7,7 +7,7 @@ namespace TowerDefense
 {
     public class TowerUIController : MonoBehaviour
     {
-        public static event Action<int> Event_TowerSelected;
+        public event Action<int> Event_TowerSelected;
 
         // Start is called before the first frame update
         void Start()
