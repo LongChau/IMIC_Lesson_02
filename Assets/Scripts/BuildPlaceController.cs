@@ -36,9 +36,20 @@ namespace TowerDefense
             TouchController.Event_TouchObject += Handle_Event_TouchObject;
             // Listen on touch UI...
             TouchController.Event_TouchUI += Handle_Event_TouchUI;
+            TouchController.Event_TouchBackground += Handle_Event_TouchBackground;
+        }
+
+        private void Handle_Event_TouchBackground()
+        {
+            HideTowerUI();
         }
 
         private void Handle_Event_TouchUI()
+        {
+            HideTowerUI();
+        }
+
+        private void HideTowerUI()
         {
             if (_toggleActive)
             {
@@ -70,6 +81,7 @@ namespace TowerDefense
 
             // Bật tui lên nè...
             // Select this tower.
+            Debug.Log($"{name} Select this tower...");
             ToggleSelect();
         }
 
@@ -103,7 +115,8 @@ namespace TowerDefense
             tower.transform.SetParent(transform);
 
             // Hide tower build UI.
-            _towerUIController.gameObject.SetActive(false);
+            if (_toggleActive)
+                ToggleSelect();
 
             // Hide sale object.
             _sale.gameObject.SetActive(false);
@@ -120,6 +133,7 @@ namespace TowerDefense
             _towerUIController.Event_TowerSelected -= Handler_Event_TowerSelected;
             TouchController.Event_TouchObject -= Handle_Event_TouchObject;
             TouchController.Event_TouchUI -= Handle_Event_TouchUI;
+            TouchController.Event_TouchBackground -= Handle_Event_TouchBackground;
         }
     }
 }

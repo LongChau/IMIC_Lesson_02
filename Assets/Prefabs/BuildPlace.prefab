@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1966147895598573242}
   - component: {fileID: 1966147895598573243}
   - component: {fileID: 1966147895598573244}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Canvas-TowerUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,9 +124,9 @@ GameObject:
   - component: {fileID: 1966147895684494759}
   - component: {fileID: 1966147895684494758}
   - component: {fileID: 1966147895684494761}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BuildPlace
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 1966147895879010437}
   - component: {fileID: 1966147895879010434}
   - component: {fileID: 1966147895879010435}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: btnTower_Soldier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,7 +288,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -298,10 +298,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 1ea59e21ccdfb204cbead1f019a83ecb, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 1ea59e21ccdfb204cbead1f019a83ecb, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 1ea59e21ccdfb204cbead1f019a83ecb, type: 3}
+    m_DisabledSprite: {fileID: 21300002, guid: 1ea59e21ccdfb204cbead1f019a83ecb, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 1966147896109238477}
   - component: {fileID: 1966147896109238479}
   - component: {fileID: 1966147896109238476}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -410,7 +410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1966147896249113749}
   - component: {fileID: 1966147896249113748}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: place
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -493,7 +493,7 @@ GameObject:
   - component: {fileID: 1966147896581733893}
   - component: {fileID: 1966147896581733895}
   - component: {fileID: 1966147896581733892}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pnlTowerSelect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -570,7 +570,7 @@ GameObject:
   - component: {fileID: 1966147896682755272}
   - component: {fileID: 1966147896682755274}
   - component: {fileID: 1966147896682755275}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -644,7 +644,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1966147896865633482}
   - component: {fileID: 1966147896865633485}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: sale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -728,7 +728,7 @@ GameObject:
   - component: {fileID: 1966147897273036454}
   - component: {fileID: 1966147897273036455}
   - component: {fileID: 1966147897273036452}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: btnTower_Archer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -812,7 +812,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -822,10 +822,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 1ea59e21ccdfb204cbead1f019a83ecb, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 1ea59e21ccdfb204cbead1f019a83ecb, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 1ea59e21ccdfb204cbead1f019a83ecb, type: 3}
+    m_DisabledSprite: {fileID: 21300002, guid: 1ea59e21ccdfb204cbead1f019a83ecb, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
