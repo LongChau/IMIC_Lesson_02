@@ -7,6 +7,9 @@ namespace TowerDefense
 {
     public class TowerUIController : MonoBehaviour
     {
+        [SerializeField]
+        private RectTransform _pnlTowerSelect;
+
         public event Action<int> Event_TowerSelected;
 
         // Start is called before the first frame update
@@ -20,6 +23,36 @@ namespace TowerDefense
             Debug.Log($"TowerUIController.OnBtnTowerClicked({towerIndex})");
             // Raise event tower select with param towerIndex => BuildPlaceController
             Event_TowerSelected?.Invoke(towerIndex);
+        }
+
+        public void ShowArcherUI()
+        {
+
+        }
+
+        public void ShowSoldierUI()
+        {
+
+        }
+
+        public void ShowMageUI()
+        {
+
+        }
+
+        public void ShowCannonUI()
+        {
+
+        }
+
+        public void ShowCatapultUI()
+        {
+
+        }
+
+        public void OnBtnSellClicked()
+        {
+
         }
     }
 }

@@ -19,6 +19,7 @@ namespace TowerDefense
         private List<GameObject> _listTowers = new List<GameObject>();
 
         private bool _toggleActive;
+        private bool _isBuilt;
 
         private void Awake()
         {
