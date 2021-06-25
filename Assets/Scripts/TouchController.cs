@@ -13,6 +13,13 @@ namespace TowerDefense
     {
         private Camera _mainCam;
 
+        [SerializeField]
+        private LayerMask _layerHitMask;
+        [SerializeField]
+        private int _layerUI;
+        [SerializeField]
+        private int _layerTowerUI;
+
         public static event Action<int> Event_TouchObject;
         public static event Action Event_TouchUI;
 
@@ -35,13 +42,20 @@ namespace TowerDefense
                 // Selecting UI?
                 if (EventSystem.current.currentSelectedGameObject != null)
                 {
-                    Event_TouchUI?.Invoke();
-                    return;
+                    if (EventSystem.current.currentSelectedGameObject.layer == _layerUI)
+                    {
+                        Event_TouchUI?.Invoke();
+                        return;
+                    }
+                    else if (EventSystem.current.currentSelectedGameObject.layer == _layerTowerUI)
+                    {
+                        return;
+                    }
                 }
 
                 // Physic2D.Raycast nó bắn 1 tia từ chỗ touch đến các gameobject trên màn hình.
                 // Trả về 1 RaycastHit2D. 
-                RaycastHit2D hit = Physics2D.Raycast(origin, direction);
+                RaycastHit2D hit = Physics2D.Raycast(origin, direction, float.PositiveInfinity, _layerHitMask);
                 if (hit.collider != null)
                 {
                     Debug.Log($"Hit {hit.collider.name}");

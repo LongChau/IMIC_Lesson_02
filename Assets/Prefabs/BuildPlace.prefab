@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1966147895598573242}
   - component: {fileID: 1966147895598573243}
   - component: {fileID: 1966147895598573244}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Canvas-TowerUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 1966147895684494759}
   - component: {fileID: 1966147895684494758}
   - component: {fileID: 1966147895684494761}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BuildPlace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 1966147895879010437}
   - component: {fileID: 1966147895879010434}
   - component: {fileID: 1966147895879010435}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: btnTower_Soldier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 1966147896109238477}
   - component: {fileID: 1966147896109238479}
   - component: {fileID: 1966147896109238476}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -410,7 +410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1966147896249113749}
   - component: {fileID: 1966147896249113748}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: place
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -493,7 +493,7 @@ GameObject:
   - component: {fileID: 1966147896581733893}
   - component: {fileID: 1966147896581733895}
   - component: {fileID: 1966147896581733892}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pnlTowerSelect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -570,7 +570,7 @@ GameObject:
   - component: {fileID: 1966147896682755272}
   - component: {fileID: 1966147896682755274}
   - component: {fileID: 1966147896682755275}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -644,7 +644,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1966147896865633482}
   - component: {fileID: 1966147896865633485}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: sale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -728,7 +728,7 @@ GameObject:
   - component: {fileID: 1966147897273036454}
   - component: {fileID: 1966147897273036455}
   - component: {fileID: 1966147897273036452}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: btnTower_Archer
   m_TagString: Untagged
   m_Icon: {fileID: 0}

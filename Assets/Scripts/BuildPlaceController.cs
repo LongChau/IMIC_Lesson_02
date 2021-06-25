@@ -103,7 +103,8 @@ namespace TowerDefense
             tower.transform.SetParent(transform);
 
             // Hide tower build UI.
-            _towerUIController.gameObject.SetActive(false);
+            if (_toggleActive)  // Nếu UI tower đang bật...
+                ToggleSelect(); // Toggle lại cho nó tắt...
 
             // Hide sale object.
             _sale.gameObject.SetActive(false);
