@@ -7,6 +7,7 @@ namespace TowerDefense
 {
     public class BuildPlaceController : MonoBehaviour
     {
+        #region Fields
         [SerializeField]
         private TowerUIController _towerUIController;
 
@@ -19,7 +20,30 @@ namespace TowerDefense
         private List<GameObject> _listTowers = new List<GameObject>();
 
         private bool _toggleActive;
-        private bool _isBuilt;
+        private GameObject _curTower;
+        #endregion
+
+        #region Property
+        public bool IsBuilt { get; private set; }
+
+        public ETowerType TowerType 
+        { 
+            get => _towerType;
+            set
+            {
+                _towerType = value;
+                if (_towerType == ETowerType.None)
+                {
+                    IsBuilt = false;
+                    RemoveTower();
+                }
+                else
+                {
+                    IsBuilt = true;
+                }
+            }
+        }
+        #endregion
 
         private void Awake()
         {
@@ -33,11 +57,24 @@ namespace TowerDefense
         {
             // Listen to event TowerUIController.
             _towerUIController.Event_TowerSelected += Handler_Event_TowerSelected;
+            _towerUIController.Event_TowerSold += Handle_Event_TowerSold;
             // Listen to on touch object.
             TouchController.Event_TouchObject += Handle_Event_TouchObject;
             // Listen on touch UI...
             TouchController.Event_TouchUI += Handle_Event_TouchUI;
             TouchController.Event_TouchBackground += Handle_Event_TouchBackground;
+        }
+
+        private void RemoveTower()
+        {
+            Destroy(_curTower);
+            _sale.SetActive(true);
+            HideTowerUI();
+        }
+
+        private void Handle_Event_TowerSold()
+        {
+            TowerType = ETowerType.None;
         }
 
         private void Handle_Event_TouchBackground()
@@ -97,23 +134,24 @@ namespace TowerDefense
             // Bật/Tắt gameobject. '!' hoạt động như 1 công tắc tắt mở.
             _toggleActive = !_towerUIController.gameObject.activeSelf;
             _towerUIController.gameObject.SetActive(_toggleActive);
+            _towerUIController.ShowTowerUI(TowerType);
         }
 
         private void Handler_Event_TowerSelected(int towerIndex)
         {
             // Check if already built a tower.
-            if (_towerType != ETowerType.None) return;  // Not allow to build another one.
+            if (TowerType != ETowerType.None) return;  // Not allow to build another one.
 
             // Convert int to ETowerType
-            _towerType = (ETowerType)towerIndex;
-            Debug.Log($"{name} Build tower {_towerType}");
+            TowerType = (ETowerType)towerIndex;
+            Debug.Log($"{name} Build tower {TowerType}");
 
             // Instantiate tower.
             var towerPrefab = _listTowers[towerIndex - 1];
-            var tower = Instantiate(towerPrefab, transform.position, Quaternion.identity);
+            _curTower = Instantiate(towerPrefab, transform.position, Quaternion.identity);
 
             // Set tower's parent to this.
-            tower.transform.SetParent(transform);
+            _curTower.transform.SetParent(transform);
 
             // Hide tower build UI.
             if (_toggleActive)
@@ -132,6 +170,7 @@ namespace TowerDefense
         private void OnDestroy()
         {
             _towerUIController.Event_TowerSelected -= Handler_Event_TowerSelected;
+            _towerUIController.Event_TowerSold -= Handle_Event_TowerSold;
             TouchController.Event_TouchObject -= Handle_Event_TouchObject;
             TouchController.Event_TouchUI -= Handle_Event_TouchUI;
             TouchController.Event_TouchBackground -= Handle_Event_TouchBackground;
