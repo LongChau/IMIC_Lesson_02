@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fb3d185ec578f643b07f8f4a4ff1c7c, type: 3}
+  m_Name: archer_lvl_3
+  m_EditorClassIdentifier: 
+  towerData:
+    _towerType: 1
+    _cost: 75
+    _sellCost: 25
+    _level: 3
+    _damage: 15
+    _towerIcon: {fileID: 21300056, guid: 2d97cb46c9f04974e82cefaf95c4cf81, type: 3}
+    _upgradeTower: {fileID: 0}
+    _towerPrefab: {fileID: 5397141194005984709, guid: 860c1aaffdfc1f5499a4e3317e42a6a0, type: 3}

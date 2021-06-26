@@ -14,17 +14,18 @@ namespace TowerDefense
         private ETowerType _towerType;
         [SerializeField]
         private GameObject _sale;
-
         [SerializeField]
-        private List<GameObject> _listTowers = new List<GameObject>();
+        private List<TowerAsset> _listTowerAssets = new List<TowerAsset>();
 
         private bool _toggleActive;
+        private GameObject _tower;
+        private Tower _towerData;
+        private TowerAsset _currentTowerAsset;
 
         private void Awake()
         {
             // Hide tower UI by default!
             _towerUIController.gameObject.SetActive(false);
-
         }
 
         // Start is called before the first frame update
@@ -32,10 +33,43 @@ namespace TowerDefense
         {
             // Listen to event TowerUIController.
             _towerUIController.Event_TowerSelected += Handler_Event_TowerSelected;
+            _towerUIController.Event_TowerSold += Handle_Event_TowerSold;
+            _towerUIController.Event_TowerUpgrade += Handle_Event_TowerUpgrade;
             // Listen to on touch object.
             TouchController.Event_TouchObject += Handle_Event_TouchObject;
             // Listen on touch UI...
             TouchController.Event_TouchUI += Handle_Event_TouchUI;
+        }
+
+        private void Handle_Event_TowerUpgrade()
+        {
+            UpgradeTower();
+        }
+
+        private void Handle_Event_TowerSold()
+        {
+            // bán tower đi...
+            SellTower();
+        }
+
+        public void SellTower()
+        {
+            DeleteTower();
+
+            // Add money cho player.
+            GameController.Instance.UpdateGold(_towerData.SellCost);
+        }
+
+        private void DeleteTower()
+        {
+            // Bật lại bảng sale
+            _sale.gameObject.SetActive(true);
+            // Tắt UI build.
+            ToggleSelect();
+            // Destroy tower hiện tại.
+            Destroy(_tower);
+            // Set lai5 tower type
+            _towerType = ETowerType.None;
         }
 
         private void Handle_Event_TouchUI()
@@ -84,6 +118,8 @@ namespace TowerDefense
             // Bật/Tắt gameobject. '!' hoạt động như 1 công tắc tắt mở.
             _toggleActive = !_towerUIController.gameObject.activeSelf;
             _towerUIController.gameObject.SetActive(_toggleActive);
+            // Show UI của tower được chọn.
+            _towerUIController.ShowTowerUI(_towerType);
         }
 
         private void Handler_Event_TowerSelected(int towerIndex)
@@ -91,16 +127,22 @@ namespace TowerDefense
             // Check if already built a tower.
             if (_towerType != ETowerType.None) return;  // Not allow to build another one.
 
-            // Convert int to ETowerType
-            _towerType = (ETowerType)towerIndex;
-            Debug.Log($"{name} Build tower {_towerType}");
+            // Get the tower asset...
+            _currentTowerAsset = _listTowerAssets[towerIndex - 1];
+            _towerData = _currentTowerAsset.towerData;  // Cached tower data...
+            SpawnTower();
+        }
+
+        private void SpawnTower()
+        {
+            _towerType = _towerData.TowerType;          // Get tower type.
+            var towerPrefab = _towerData.TowerPrefab;   // Get tower prefab...
 
             // Instantiate tower.
-            var towerPrefab = _listTowers[towerIndex - 1];
-            var tower = Instantiate(towerPrefab, transform.position, Quaternion.identity);
+            _tower = Instantiate(towerPrefab, transform.position, Quaternion.identity);
 
             // Set tower's parent to this.
-            tower.transform.SetParent(transform);
+            _tower.transform.SetParent(transform);
 
             // Hide tower build UI.
             if (_toggleActive)  // Nếu UI tower đang bật...
@@ -108,17 +150,47 @@ namespace TowerDefense
 
             // Hide sale object.
             _sale.gameObject.SetActive(false);
+
+            // Update cost
+            GameController.Instance.UpdateGold(-_towerData.Cost);
         }
 
-        // Update is called once per frame
-        void Update()
+        [ContextMenu("UpgradeTower")]
+        public void UpgradeTower()
         {
+            // Check xem có đủ tiền không?
+            if (GameController.Instance.LevelData.Gold < _towerData.Cost)
+            {
+                Debug.LogError("Cannot upgrade... Not enought gold...");
+                return;
+            }
 
+            // Check xem tower có upgrade được không.
+            //if (!_towerData.CanUpgradable)
+            if (_towerData.CanUpgradable == false)
+            {
+                Debug.LogError("Cannot upgrade... max level...");
+                return;
+            }
+            // Xử lý...
+            Debug.Log("Let's upgrade tower!");
+            // Thay đổi towerData sang tower nâng cấp.
+            _currentTowerAsset = _currentTowerAsset.towerData.UpgradeTower;
+            _towerData = _currentTowerAsset.towerData;
+            // Delete tower.
+            DeleteTower();
+            // Spawn new tower.
+            SpawnTower();
+            // TODO: Update tower UI...
+
+            Debug.Log($"Upgrade to tower {_currentTowerAsset.name}");
         }
 
         private void OnDestroy()
         {
             _towerUIController.Event_TowerSelected -= Handler_Event_TowerSelected;
+            _towerUIController.Event_TowerSold -= Handle_Event_TowerSold;
+            _towerUIController.Event_TowerUpgrade -= Handle_Event_TowerUpgrade;
             TouchController.Event_TouchObject -= Handle_Event_TouchObject;
             TouchController.Event_TouchUI -= Handle_Event_TouchUI;
         }
