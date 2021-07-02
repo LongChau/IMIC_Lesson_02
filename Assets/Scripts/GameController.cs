@@ -32,6 +32,8 @@ namespace TowerDefense
         private void Awake()
         {
             _instance = this;
+            //var newLevelAsset = Instantiate(_lvlAsset);
+            //_lvlAsset = newLevelAsset;
             _levelData = _lvlAsset.level;
         }
 

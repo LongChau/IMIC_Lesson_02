@@ -12,7 +12,7 @@ namespace TowerDefense
     }
 
     [Serializable]
-    public class Level
+    public struct Level
     {
         [SerializeField]
         private int _gold;
