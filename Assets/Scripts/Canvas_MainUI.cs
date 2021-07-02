@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace TowerDefense
 {
@@ -31,6 +32,12 @@ namespace TowerDefense
         private void Handle_Event_UpdateGold(int gold)
         {
             _txtGold.SetText($"Gold: {gold}");
+        }
+
+        public void OnBtnResetClicked()
+        {
+            Debug.Log("OnBtnResetClicked()");
+            SceneManager.LoadScene(0, LoadSceneMode.Single);
         }
     }
 }

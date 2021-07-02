@@ -15,6 +15,8 @@ namespace TowerDefense
         [SerializeField]
         private Level _levelData;
 
+        public int testGold;
+
         private static GameController _instance;
         public static GameController Instance
         {
@@ -32,7 +34,16 @@ namespace TowerDefense
         private void Awake()
         {
             _instance = this;
+            //_lvlAsset = Instantiate(_lvlAsset);
             _levelData = _lvlAsset.level;
+            testGold = _lvlAsset.testGold;
+        }
+
+        [ContextMenu("MinusGold")]
+        private void MinusGold()
+        {
+            testGold -= 10;
+            _levelData.Gold -= 10;
         }
 
         // Start is called before the first frame update

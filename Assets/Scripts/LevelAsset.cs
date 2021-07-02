@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,10 +9,16 @@ namespace TowerDefense
     public class LevelAsset : ScriptableObject
     {
         public Level level;
+        public int testGold;
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// nếu để struct thì sẽ không thay đổi ScriptableObject lúc runtime. 
+    /// Còn class thì sẽ bị thay đổi. Nhưng không bị serialize.
     [Serializable]
-    public class Level
+    public struct Level
     {
         [SerializeField]
         private int _gold;
