@@ -17,13 +17,19 @@ namespace TowerDefense
         [SerializeField]
         private int _level;
         [SerializeField]
-        private float _damage;
+        private int _damage;
+        [SerializeField]
+        private float _visionRadius;
+        [SerializeField]
+        private float _shootIntervalTime;
         [SerializeField]
         private Sprite _towerIcon;
         [SerializeField]
         private TowerAsset _upgradeTower;
         [SerializeField]
         private GameObject _towerPrefab;
+        [SerializeField]
+        private GameObject _projectilePrefab;
         //[SerializeField]
         //private Skill _skill;
 
@@ -31,7 +37,7 @@ namespace TowerDefense
         public int Cost { get => _cost; set => _cost = value; }
         public int SellCost { get => _sellCost; set => _sellCost = value; }
         public int Level { get => _level; set => _level = value; }
-        public float Damage { get => _damage; set => _damage = value; }
+        public int Damage { get => _damage; set => _damage = value; }
         public Sprite TowerIcon { get => _towerIcon; set => _towerIcon = value; }
         public TowerAsset UpgradeTower { get => _upgradeTower; set => _upgradeTower = value; }
         public GameObject TowerPrefab { get => _towerPrefab; set => _towerPrefab = value; }
@@ -47,5 +53,9 @@ namespace TowerDefense
                 return _upgradeTower != null;
             }
         }
+
+        public float VisionRadius { get => _visionRadius; set => _visionRadius = value; }
+        public GameObject ProjectilePrefab { get => _projectilePrefab; set => _projectilePrefab = value; }
+        public float ShootIntervalTime { get => _shootIntervalTime; set => _shootIntervalTime = value; }
     }
 }

@@ -18,6 +18,9 @@ MonoBehaviour:
     _sellCost: 25
     _level: 2
     _damage: 10
+    _visionRadius: 1.3
+    _shootIntervalTime: 0.8
     _towerIcon: {fileID: 21300050, guid: 2d97cb46c9f04974e82cefaf95c4cf81, type: 3}
     _upgradeTower: {fileID: 11400000, guid: 374c27ac51774a64faafed72a379dd03, type: 2}
     _towerPrefab: {fileID: 5397141194005984709, guid: 91dec16fcf19a524987c800f3d2e1a27, type: 3}
+    _projectilePrefab: {fileID: 6582271414721818733, guid: 9a1b99f6b62bdba4ba237ba8c5c6d90e, type: 3}
