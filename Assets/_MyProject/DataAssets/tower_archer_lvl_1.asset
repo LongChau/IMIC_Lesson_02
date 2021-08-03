@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3fb3d185ec578f643b07f8f4a4ff1c7c, type: 3}
-  m_Name: archer_lvl_2
+  m_Name: tower_archer_lvl_1
   m_EditorClassIdentifier: 
   towerData:
     _towerType: 1
-    _cost: 50
-    _sellCost: 25
-    _level: 2
-    _damage: 10
-    _visionRadius: 1.3
-    _shootIntervalTime: 0.8
-    _towerIcon: {fileID: 21300050, guid: 2d97cb46c9f04974e82cefaf95c4cf81, type: 3}
-    _upgradeTower: {fileID: 11400000, guid: 374c27ac51774a64faafed72a379dd03, type: 2}
-    _towerPrefab: {fileID: 5397141194005984709, guid: 91dec16fcf19a524987c800f3d2e1a27, type: 3}
+    _cost: 30
+    _sellCost: 15
+    _level: 1
+    _damage: 1
+    _visionRadius: 1.2
+    _shootIntervalTime: 1
+    _towerIcon: {fileID: 21300032, guid: 2d97cb46c9f04974e82cefaf95c4cf81, type: 3}
+    _upgradeTower: {fileID: 11400000, guid: 70b207fe1db96cb4e8bd08c71eec0de8, type: 2}
+    _towerPrefab: {fileID: 5397141194005984709, guid: ca3301a39befad14fb9c90d3fe318395, type: 3}
     _projectilePrefab: {fileID: 6582271414721818733, guid: 9a1b99f6b62bdba4ba237ba8c5c6d90e, type: 3}
