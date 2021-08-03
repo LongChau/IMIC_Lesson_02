@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fb3d185ec578f643b07f8f4a4ff1c7c, type: 3}
+  m_Name: soldier_lvl_1
+  m_EditorClassIdentifier: 
+  towerData:
+    _towerType: 2
+    _cost: 15
+    _sellCost: 7
+    _level: 1
+    _damage: 5
+    _towerIcon: {fileID: 21300030, guid: 2d97cb46c9f04974e82cefaf95c4cf81, type: 3}
+    _upgradeTower: {fileID: 11400000, guid: bd0296e13aa8e654398d9e2524e3d088, type: 2}
+    _towerPrefab: {fileID: 4626428978110056269, guid: de72bfe885df26b44a4f9d24c5da4b7f, type: 3}
