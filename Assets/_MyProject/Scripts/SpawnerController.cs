@@ -9,7 +9,7 @@ namespace TowerDefense
         [SerializeField]
         private float _spawnTime;
         [SerializeField]
-        private EnemyController _enemyPrefab;
+        private EnemyController[] _enemyPrefabs;
         [SerializeField]
         private PathController _path;
 
@@ -34,7 +34,8 @@ namespace TowerDefense
             var wait = new WaitForSecondsRealtime(time);
             while (true)
             {
-                var enemy = Instantiate(_enemyPrefab, transform.position, Quaternion.identity);
+                int randIndex = Random.Range(0, _enemyPrefabs.Length);
+                var enemy = Instantiate(_enemyPrefabs[randIndex], transform.position, Quaternion.identity);
                 enemy.Paths = _path.Paths;
                 yield return wait;
             }

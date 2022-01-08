@@ -7,19 +7,22 @@ namespace TowerDefense
     public class EnemyController : MonoBehaviour
     {
         [SerializeField]
-        private float _speed;
+        private EnemySO _enemyData;
 
         private Transform _destination;
 
         private int _pathPointIndex;
+
+        private int currentHealth; 
 
         public List<Transform> Paths { get; set; }
 
         // Start is called before the first frame update
         void Start()
         {
-            _pathPointIndex++;
+            _pathPointIndex = 0;
             _destination = Paths[_pathPointIndex];
+            currentHealth = _enemyData.health;
         }
 
         // Update is called once per frame
@@ -49,7 +52,29 @@ namespace TowerDefense
             else
             {
                 // Go to destination.
-                transform.position = Vector2.MoveTowards(transform.position, _destination.position, _speed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, _destination.position, _enemyData.speed * Time.deltaTime);
+            }
+        }
+
+        [ContextMenu("TakeFullDamage")]
+        private void TakeFullDamage()
+        {
+            int damg = currentHealth;
+            currentHealth -= damg;
+            if (currentHealth <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        [ContextMenu("Take10Damage")]
+        private void Take10Damage()
+        {
+            int damg = 10;
+            currentHealth -= damg;
+            if (currentHealth <= 0)
+            {
+                Destroy(gameObject);
             }
         }
     }

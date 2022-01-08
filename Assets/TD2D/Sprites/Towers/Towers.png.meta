@@ -4,10 +4,10 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 21300000
-    second: Towers_4__0
+    second: Tower_Barrack_3
   - first:
       213: 21300002
-    second: Towers_4__1
+    second: Tower_Archer_3
   - first:
       213: 21300004
     second: Towers_4__2
@@ -28,16 +28,16 @@ TextureImporter:
     second: Towers_4__7
   - first:
       213: 21300016
-    second: Towers_4__8
+    second: Tower_Archer_2
   - first:
       213: 21300018
-    second: Towers_4__9
+    second: Tower_Barrack_2
   - first:
       213: 21300020
-    second: Towers_4__10
+    second: Tower_Barrack_1
   - first:
       213: 21300022
-    second: Towers_4__11
+    second: Tower_Archer_1
   - first:
       213: 21300024
     second: Towers_4__12
@@ -49,10 +49,10 @@ TextureImporter:
     second: Towers_4__14
   - first:
       213: 21300030
-    second: Towers_4__15
+    second: Tower_Barrack_1_Icon
   - first:
       213: 21300032
-    second: Towers_4__16
+    second: Tower_Archer_1_Icon
   - first:
       213: 21300034
     second: Towers_4__17
@@ -79,16 +79,16 @@ TextureImporter:
     second: Towers_4__24
   - first:
       213: 21300050
-    second: Towers_4__25
+    second: Tower_Archer_2_Icon
   - first:
       213: 21300052
-    second: Towers_4__26
+    second: Tower_Barrack_2_Icon
   - first:
       213: 21300054
-    second: Towers_4__27
+    second: Tower_Barrack_3_Icon
   - first:
       213: 21300056
-    second: Towers_4__28
+    second: Tower_Archer_3_Icon
   - first:
       213: 21300058
     second: Towers_4__29
@@ -193,7 +193,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Towers_4__0
+      name: Tower_Barrack_3
       rect:
         serializedVersion: 2
         x: 411
@@ -201,7 +201,7 @@ TextureImporter:
         width: 100
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.56}
+      pivot: {x: 0.5, y: 0.35258484}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -214,7 +214,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Towers_4__1
+      name: Tower_Archer_3
       rect:
         serializedVersion: 2
         x: 407
@@ -361,7 +361,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Towers_4__8
+      name: Tower_Archer_2
       rect:
         serializedVersion: 2
         x: 205
@@ -382,7 +382,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Towers_4__9
+      name: Tower_Barrack_2
       rect:
         serializedVersion: 2
         x: 207
@@ -390,7 +390,7 @@ TextureImporter:
         width: 100
         height: 120
       alignment: 9
-      pivot: {x: 0.4876242, y: 0.58}
+      pivot: {x: 0.5, y: 0.36490223}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -403,7 +403,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Towers_4__10
+      name: Tower_Barrack_1
       rect:
         serializedVersion: 2
         x: 10
@@ -411,7 +411,7 @@ TextureImporter:
         width: 100
         height: 120
       alignment: 9
-      pivot: {x: 0.5, y: 0.51}
+      pivot: {x: 0.5, y: 0.27639416}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -424,7 +424,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Towers_4__11
+      name: Tower_Archer_1
       rect:
         serializedVersion: 2
         x: 8
@@ -508,7 +508,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Towers_4__15
+      name: Tower_Barrack_1_Icon
       rect:
         serializedVersion: 2
         x: 121
@@ -529,7 +529,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Towers_4__16
+      name: Tower_Archer_1_Icon
       rect:
         serializedVersion: 2
         x: 122
@@ -718,7 +718,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Towers_4__25
+      name: Tower_Archer_2_Icon
       rect:
         serializedVersion: 2
         x: 319
@@ -739,7 +739,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Towers_4__26
+      name: Tower_Barrack_2_Icon
       rect:
         serializedVersion: 2
         x: 319
@@ -760,7 +760,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Towers_4__27
+      name: Tower_Barrack_3_Icon
       rect:
         serializedVersion: 2
         x: 525
@@ -781,7 +781,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Towers_4__28
+      name: Tower_Archer_3_Icon
       rect:
         serializedVersion: 2
         x: 526
@@ -825,7 +825,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 479e8fc8ec884fd4bbc01037a335f3bd
     internalID: 0
     vertices: []
     indices: 
