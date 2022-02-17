@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eee9bb880170a2949be463fbd868d37e, type: 3}
-  m_Name: BatDataAsset
+  m_Script: {fileID: 11500000, guid: 125c8f6c8e427764fafc86b4af69fee9, type: 3}
+  m_Name: UserDataSO
   m_EditorClassIdentifier: 
-  speed: 0.8
-  health: 25
+  _gold: 1500

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: GoblinDataAsset
   m_EditorClassIdentifier: 
   speed: 1.5
-  health: 100
+  health: 20

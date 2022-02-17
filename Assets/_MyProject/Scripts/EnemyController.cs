@@ -16,13 +16,26 @@ namespace TowerDefense
         private int currentHealth; 
 
         public List<Transform> Paths { get; set; }
+        public int CurrentHealth 
+        { 
+            get => currentHealth;
+            set
+            {
+                currentHealth = value;
+                if (currentHealth <= 0)
+                {
+                    currentHealth = 0;
+                    Destroy(gameObject);
+                }
+            }
+        }
 
         // Start is called before the first frame update
         void Start()
         {
             _pathPointIndex = 0;
             _destination = Paths[_pathPointIndex];
-            currentHealth = _enemyData.health;
+            CurrentHealth = _enemyData.health;
         }
 
         // Update is called once per frame
@@ -59,22 +72,24 @@ namespace TowerDefense
         [ContextMenu("TakeFullDamage")]
         private void TakeFullDamage()
         {
-            int damg = currentHealth;
-            currentHealth -= damg;
-            if (currentHealth <= 0)
-            {
-                Destroy(gameObject);
-            }
+            int damg = CurrentHealth;
+            CurrentHealth -= damg;
         }
 
         [ContextMenu("Take10Damage")]
         private void Take10Damage()
         {
             int damg = 10;
-            currentHealth -= damg;
-            if (currentHealth <= 0)
+            CurrentHealth -= damg;
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.CompareTag("DamageObject"))
             {
-                Destroy(gameObject);
+                var damgObj = collision.GetComponent<DamageObject>();
+                CurrentHealth -= damgObj.Damage;
+                Destroy(damgObj.gameObject);
             }
         }
     }

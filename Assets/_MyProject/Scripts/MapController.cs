@@ -1,22 +1,19 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 namespace TowerDefense
 {
-    public class CanvasBuilding : MonoBehaviour
+    public class MapController : MonoBehaviour
     {
-        [SerializeField]
-        private BtnTower[] _btnTowers;
+        public static UnityEvent Event_TouchMap = new UnityEvent();
 
         // Start is called before the first frame update
         void Start()
         {
-
+            GameManager.Instance.MapInstanceId = gameObject.GetInstanceID();
         }
-
     }
 }
